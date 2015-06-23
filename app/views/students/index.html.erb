@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+<div class=loop>
+<% @student.each do |student| %>
+	<%= student.fname %>
+	<%= student.lname %>
+	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+	<%= link_to("Delete Student", destroy_student_path(@student), method: :delete) %>
+<% end %>
+</div>
+
+</body>
+
+</html>

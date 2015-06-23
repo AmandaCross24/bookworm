@@ -1,0 +1,11 @@
+<div class="sign_up">
+	<%= simple_form_for @student do |f| %>
+	
+ 	 <%= f.input :fname %>
+	 <%= f.input :lname %>
+  	 <%= f.input :current_lexile_level  %>
+  	 <%= f.input :current_guided_reading_level %>
+  	 
+  	 <%= f.button :submit, class: "circle" %>
+<% end %>
+</div>

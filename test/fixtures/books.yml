@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: MyString
+  lexile_level: MyString
+  guided_reading_level: MyString
+
+two:
+  title: MyString
+  author: MyString
+  lexile_level: MyString
+  guided_reading_level: MyString

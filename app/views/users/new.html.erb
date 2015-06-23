@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign-up!</title>
+	</head>
+
+	<body>
+	<div class="form">
+	<header>	
+		<h2>Sign up Below!</h2> 
+		<%= link_to 'Home', root_path, class: "circle" %> 
+	</header>
+</div>
+
+<div class="sign_up">
+	<%= simple_form_for @user do |f| %>
+	
+ 	 <%= f.input :username, placeholder: '12 characters', :required => true, label_html: { class: 'my_class' } %>
+	 <%= f.input :password, placeholder: '8 characters', hint: false, :required => true, error_html: { id: 'password_error'} %>
+  	 <%= f.input :email, placeholder: 'user@domain.com', :required => true %>
+  	 <%= f.input :students_first_name, :required => true %>
+  	 <%= f.input :students_last_name, :required => true %>
+  	 
+  	 <%= f.input :avatar, :required => false, :as => :file %>
+
+  	 <%= f.button :submit, class: "circle" %>
+<% end %>
+</div>
+
+
+	</body>
+</html>
