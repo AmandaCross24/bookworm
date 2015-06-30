@@ -1,0 +1,23 @@
+
+<div class="panel panel-default">
+ 
+  <div class="panel-body2">
+
+
+
+
+
+</div>
+</div>
+
+
+<div class="users">
+<ul><% @users.each do |user| %>
+<li><%= user.fname  %> 
+	<%= user.id %>
+<%= user.lname %>
+<%= user.email %></li>
+
+<% end %>
+
+</div>

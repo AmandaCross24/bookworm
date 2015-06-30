@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   
- 
+  resources :users
+  resources :sessions, except: [ :create, :new, :index, :show, :edit, :update]
+  resources :books
+  resources :running_records
+  resources :students, except: [:show]
 
-  delete 'Delete Student', to:'students#destroy', as: 'destroy_student'
-
-
-  resources :users, :sessions, :books, :students
-
+   delete '/users/:id', to:'users#destroy', as: 'destroy_user'
+   delete '/students/:id', to: 'students#destroy', as: 'destroy_student'
+  # post '/sessions/:id', to: 'sessions#create', as: 'signin'
+  get 'users/account/:id', to: 'users#account', as: 'account'
+ get '/sessions/login', to: 'sessions#login', as: 'login'
+  get '/students/:id', to: 'students#profile', as: 'profile'
+  post '/sessions/:id', to: 'sessions#signin', as: 'see_profile'
 
  
 

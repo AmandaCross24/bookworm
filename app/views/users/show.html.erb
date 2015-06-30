@@ -1,11 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    User Profile
+  </title>
+</head>
+
+<body>
+
+
 
 <div class="panel panel-default">
-  <div class="panel-body">
  
+  <div class="panel-body">
+
+
+<%= link_to 'See a List of All Users', users_path, class: "rectangle" %>
+
+<%= link_to 'Your Account', account_path(@user), class: "rectangle2" %>
+
+<%= link_to 'Log Out', root_path, class: "rectangle3" %>
+
+
+
+
 
 
 <!-- Button trigger modal -->
-<button type="button" class="circle" data-toggle="modal" data-target="#myModal">
+<button type="button" class="rectangle4" data-toggle="modal" data-target="#myModal">
   Add a Student
 </button>
 
@@ -19,7 +41,8 @@
       </div>
       <div class="modal-body">
         <div class="sign_up">
-      <%= simple_form_for @student do |f| %>
+      <%= simple_form_for Student.new, :url => url_for(:action => 'create', :controller => 'students'),
+    :method => 'post' do |f| %>
       
        <%= f.input :fname %>
        <%= f.input :lname %>
@@ -29,61 +52,81 @@
          <%= f.button :submit, class: "circle" %>
     <% end %>
     </div>
-      </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       
       </div>
     </div>
   </div>
 </div>
+</div>
+
+
+
+
 
 
 
 <!-- Button trigger modal -->
-<button type="button" class="circle" data-toggle="modal" data-target="#myModal">
-  Add a Running Record
+<button type="button" class="rectangle5" data-toggle="modal" data-target="#myModal3">
+  Add a Book
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">New Student</h4>
+        <h4 class="modal-title" id="myModalLabel">Add A Book</h4>
       </div>
       <div class="modal-body">
+        
         <div class="sign_up">
-      <%= simple_form_for Student.new do |f| %>
       
-       <%= f.input :fname %>
-       <%= f.input :lname %>
-         <%= f.input :current_lexile_level  %>
-         <%= f.input :current_guided_reading_level %>
+    
+
+
+        <%= simple_form_for Book.new, :url => url_for(:controller => 'books', :action => 'create')do |f| %>
+      
+         <%= f.input :title %>
+         <%= f.input :author %>
+         <%= f.input :lexile_level  %>
+         <%= f.input :guided_reading_level %>
          
          <%= f.button :submit, class: "circle" %>
-    <% end %>
-    </div>
+         <% end %>
+        </div>
+
+
+
       </div>
+
+
+
+
+
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
+</div>
 
- </div>
- <div class="panel-footer"></div></span>
+<div class="light">
+
+<div class="lighter">
+
+</div>
+
 </div>
 
 
+
+
 </body>
+
 </html>
-
-
-
-
-
 

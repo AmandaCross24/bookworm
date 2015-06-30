@@ -4,18 +4,9 @@
 </head>
 
 <body>
-<div class=loop>
-<% @student.each do |student| %>
-	<%= student.fname %>
-	<%= student.lname %>
-	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-	<%= link_to "Delete User", destroy_student_path, method: :delete %>
-<% end %>
+
+
+<%= "Hello! #{student.fname}" %>
 
 
 
-</div>
-
-</body>
-
-</html>

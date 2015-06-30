@@ -2,7 +2,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="circle" data-toggle="modal" data-target="#myModal">
-  Log In
+  Log In, :url => see_profile_path(@user)
 </button>
 
 <!-- Modal -->
@@ -15,16 +15,8 @@
       </div>
       <div class="modal-body">
         <div class="sign_up">
-      <%= simple_form_for User.new, :url => url_for(:action => 'see_profile', :controller => 'sessions'),
-    :method => 'post' do |f| %>
-      
-       <%= f.input :username %>
-       <%= f.input :password %>
-         <%= f.input :email  %>
-  
-         
-         <%= f.button :submit, class: "circle" %>
-    <% end %>
+     
+    
     </div>
 
       <div class="modal-footer">
@@ -36,3 +28,13 @@
 </div>
 </div>
 
+ <%= simple_form_for @user, :url => see_profile_path(@user), method: :post do |f| %>
+      
+       <%= f.input :username %>
+       <%= f.input :password %>
+         <%= f.input :email  %>
+  
+         
+         <%= f.button :submit, class: "circle" %>
+
+         <% end %>

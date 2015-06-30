@@ -1,24 +1,28 @@
 class SessionsController < ApplicationController
 
-  def new
-    @session = Session.new
-    @user = User.where(email: params[:email]).first
+  def index
   end
 
+  # def new
+  # @session = Session.new
+  # @user = current_user
+  # end
 
- def create
-  @session = Session.new(user_params)
-  @user = User.where(email: params[:email]).first
-  if @user && @user.password == params[:password]
-  session[:user_id] = @user.id
-  flash[:notice] = "You have logged in successfully."
-  redirect_to session_path(@user)
-  else
-    flash[:alert] = "There was a problem logging in."
-    redirect_to new_session_path
-  end
+def login
+  @user = current_user
 end
 
+#  def create
+#   @user = User.where(email: params[:email]).first
+
+# end
+
+def see_profile
+  @user = User.where(email: params[:email]).first
+  session[:user_id] = @user.id
+  flash[:notice] = "You have logged in successfully."
+  redirect_to user_path(@user)
+end
 
  # @user = User.where(email: params[:email]).first
  #    if @user && @user.password == params[:password]
@@ -72,22 +76,22 @@ end
 
 
 
-  def show
-    @session = Session.new
-    @user = User.find(params[:id])
-  	
-  end
 
   def destroy
     session[:user_id] = nil
     flash[:notice] = "You have logged out successfully"
     redirect_to root_path
   end
-end
-private
 
-  def user_params
+
+private 
+
+def current_user 
+  @current_user ||= session[:current_user_id] &&
+  User.find(session[:current_user_id])
+end
+
+def session_params
     params.require(:user).permit(:username, :email, :password)
   end
-
-
+end

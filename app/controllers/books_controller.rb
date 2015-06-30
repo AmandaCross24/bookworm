@@ -61,4 +61,7 @@ end
   end
 
 
+  def book_params
+    params.require(:book).permit(:title, :author, :lexile_level, :guided_reading_level)
+  end
 end
