@@ -9,12 +9,37 @@ class SessionsController < ApplicationController
   # end
 
 def login
-  @user = current_user
+  
+
+  @user = User.find_by(:id params[:id])
+
 end
 
 #  def create
 #   @user = User.where(email: params[:email]).first
 
+# end
+
+def create
+  session_id = current_user
+  # @session = Session.create(session_params)
+   flash[:notice] = "You have logged in successfully."
+  redirect_to user_path(@user)
+ # session[:current_user_id] = @user.id
+  
+end
+
+
+def new 
+  # @session = Session.new
+  # @user = current_user
+  flash[:notice] = "You have logged in successfully."
+  redirect_to user_path(@user)
+ 
+   
+end
+# def signin 
+#   @user = current_user
 # end
 
 def see_profile
@@ -78,20 +103,23 @@ end
 
 
   def destroy
-    session[:user_id] = nil
+    session_id = nil
     flash[:notice] = "You have logged out successfully"
-    redirect_to root_path
+    
   end
 
 
 private 
 
 def current_user 
-  @current_user ||= session[:current_user_id] &&
-  User.find(session[:current_user_id])
+ 
+  @current_user = User.find(session[:id])
+
+
+  
 end
 
 def session_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:session).permit( :id)
   end
 end

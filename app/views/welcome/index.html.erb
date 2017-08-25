@@ -5,112 +5,38 @@
 	</head>
 
 	<body>
-	<div class="form">
-	<header>	
-		<h1>Bookworm</h1>
+		<div class="buttons">
 		
-	</header>
-</div>
-
-
-<img src="<%= asset_path('animated_worm.gif') %>" class="image"/><br>
-
-
-<div class="registration">
-<!-- Button trigger modal -->
-<button type="button" class="circle" data-toggle="modal" data-target="#myModal">
-  Sign Up
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign up!</h4>
-      </div>
-      <div class="modal-body">
-        <div class="sign_up">
- 
-		<div class="sign_up">
-		
-  			<%= simple_form_for User.new, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
-			 <%= f.input :fname, :required => false %>
-			 <%= f.input :lname, :required => false %>
-		 	 <%= f.input :username, placeholder: '12 characters' %>
-			 <%= f.input :password  %>
-		  	 <%= f.input :email, placeholder: 'user@domain.com' %>
-		  	 <%= f.input :parent, :required => false %>
-		  	 <%= f.input :students_first_name, :required => false, hint: 'Only answer if you are a parent' %>
-		  	 <%= f.input :students_last_name, :required => false, hint: 'Only answer if you are a parent' %>
-		  	 <%= f.input :teacher_name, :required => false, hint: 'Only answer if you are a parent' %>
-		  	 <%= f.input :avatar, :required => false, :as => :file %>
-
-		  	 <%= f.button :submit, class: "circle" %>
-			<% end %>
-		
-		</div>
-		</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<%= link_to 'Log In', login_path, class: "circle" %>
-
- </h4>  
-		
-</div>
-
-		
-		<h4>
-
-
+			<%=	render :partial => 'registration', :object => {:user => @user} %>	
 			
-
-		
+			<%=	render :partial => 'login', :object => {:session => @session} %>	
 			
-			<div class="background_image">
-	<div class="main">
-				
-
-
-		
-
-				<div class="main2">
-				<br>
-				<div>Welcome to my teaching app!  This app is designed to help teachers keep track of their students' reading progress.  This app will include many features, including:</div>
-				<ul>
-					<li>A feature that allows teachers to scan books and get information about that book's title, author, Fountas and Pinnell level, and Lexile level.</li>
-
-					<li>A feature that allows teachers to upload and read ebooks</li>
-
-					<li>A feature that allows teachers to record their students while they are reading these ebooks.</li>
-					<li>A feature that allows teachers to keep track of their students' reading lists</li>
+		</div>
+		<header>	
+			<h1>Bookworm</h1>
+		</header>	
+			<div class="background">
+				<div class="main">
+					<div class="main2">
+					<br>
+					<div class="paragraph">Welcome to my teaching app!  This app is designed to help teachers keep track of their students' information and progress.  This app will include many features, including:</div>
+						<ul>
+							<li>A feature that allows teachers to scan books and get information about that book's title, author, Fountas and Pinnell level, and Lexile level.</li>
+							<li>A feature that allows teachers to upload and read ebooks</li>
+							<li>A feature that allows teachers to record their students while they are reading these ebooks.</li>
+							<li>A feature that allows teachers to keep track of their students' reading lists</li>
+						</ul>
+					</div>
+					<div class="main3">
+						<ul>
+							<li>A feature that allows teachers to keep track of past running records, all their students reading lists, notes on their students' progress</li>
+							<li>A feature that allows students to make recommendations about books, have discussions about books, and annotate text to help them study.  All comments must be screened and approved by the teacher.</li>
+						</ul>
+					<div class="paragraph">All of these features are designed with the intention of allowing teachers to keep track of and to organize their students' progress</div>
+					</div>
 				</div>
-				
-
-				<div class="main3">
-					
-
-					<li>A feature that allows teachers to keep track of past running records, all their students reading lists, notes on their students' progress</li>
-
-					<li>A feature that allows students to make recommendations about books, have discussions about books, and annotate text to help them study.  All comments must be screened and approved by the teacher.</li>
-
-
-					<div>All of these features are designed with the intention of allowing teachers to keep track of and to organize their students' progress</div>
-				</div>
-			</div>
 			<div>
-
-
-			</div>
+		</div>
 
 
 	<div class="footer">

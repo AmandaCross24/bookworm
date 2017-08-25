@@ -37,13 +37,14 @@ end
   end
 
 def destroy
-    puts "PARAMS ARE " + params.inspect
-       @student = Student.find_by(fname: params[:fname])
-       if @student.destroy
+         puts "PARAMS ARE " + params.inspect
+       @student = Student.find(params[:id])
+      if @student.destroy
       flash[:notice] = "This student was successfully deleted."
-      redirect_to students_path
-    else 
-      flash[:alert] = "There was a problem deleting this student"
+      redirect_to root_path
+      else
+        flash[:alert] = "There was a problem deleting this student."
+        redirect_to user_path(@user)
     end
 end
      

@@ -1,18 +1,29 @@
 Rails.application.routes.draw do
   
+  resources :meetings, except: [:destroy, :index]
+  get 'meetings/index'
+
   resources :users
-  resources :sessions, except: [ :create, :new, :index, :show, :edit, :update]
+  # resources :sessions, except: [ :create, :new, :index, :show, :edit, :update]
+  
   resources :books
   resources :running_records
   resources :students, except: [:show]
 
    delete '/users/:id', to:'users#destroy', as: 'destroy_user'
    delete '/students/:id', to: 'students#destroy', as: 'destroy_student'
-  # post '/sessions/:id', to: 'sessions#create', as: 'signin'
-  get 'users/account/:id', to: 'users#account', as: 'account'
- get '/sessions/login', to: 'sessions#login', as: 'login'
+  
+  get 'meetings/:id', to: 'meetings#index', as: 'show_meetings'
+   delete '/meetings/:id', to: 'meetings#destroy', as: 'destroy_meeting'
+  # get'/login/', to: 'sessions#login', as: 'login'
+  get '/users/:id/account', to: 'users#account', as: 'account'
+  get '/users/:id', to: 'users#show', as: 'current_user'
+ # get '/sessions/login/:id', to: 'sessions#login', as: 'signin'
   get '/students/:id', to: 'students#profile', as: 'profile'
-  post '/sessions/:id', to: 'sessions#signin', as: 'see_profile'
+  # post '/sessions/login/:id', to: 'sessions#login', as: 'see_profile'
+  get '/sessions', to: 'sessions#create', as: 'session'
+  post '/sessions/new', to: 'sessions#new', as: 'sessions'
+  # get 'welcome/index', to: 'welcome#index', as: 'root'
 
  
 

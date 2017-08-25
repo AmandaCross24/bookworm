@@ -1,0 +1,21 @@
+<%= simple_form_for(@meeting) do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.input :name %>
+
+    <div class="row">
+    <div class="col-sm-6" style="background-color:yellow;">
+
+	<%= f.input :start_time %>
+</div>
+<div class="col-sm-6" style="background-color:pink;">
+
+    <%= f.input :end_time %>
+   </div>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,48 @@
+
+
+
+<div class="registration">
+<!-- Button trigger modal -->
+<button type="button" class="circle" data-toggle="modal" data-target="#myModal">
+  Sign Up
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign up!</h4>
+      </div>
+      <div class="modal-body">
+        <div class="sign_up">
+ 
+		<div class="sign_up">
+
+		
+  			<%= simple_form_for User.new, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
+  			 <%= f.input :fname, :required => true %>
+			 <%= f.input :lname, :required => true %>
+		 	 <%= f.input :username, placeholder: '12 characters', :required => true %>
+			 <%= f.input :password, :required => true %>
+		  	 <%= f.input :email, placeholder: 'user@domain.com', :required => true %>
+		  	 <%= f.input :parent, :required => false %>
+		  	 <%= f.input :students_first_name, :required => false, hint: 'Only answer if you are a parent' %>
+		  	 <%= f.input :students_last_name, :required => false, hint: 'Only answer if you are a parent' %>
+		  	 <%= f.input :teacher_name, :required => false, hint: 'Only answer if you are a parent' %>
+		  	 <%= f.input :avatar, :required => false, :as => :file %>
+
+		  	 <%= f.button :submit, class: "circle" %>
+			<% end %>
+		
+		</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>

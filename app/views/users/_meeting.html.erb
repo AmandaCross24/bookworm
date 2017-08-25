@@ -1,0 +1,36 @@
+<div class="lighter">
+  <% n = 1  %>
+  <% $num = 31 %>
+  <% while n < 31 do %> 
+    <%= month_calendar do |date, meeting| %>
+      <%= date.day %>
+      <%= n %>
+      <%= render partial: 'event', locals: { meetings: @meetings} %>
+        <%= simple_form_for Meeting.new, :url => url_for(:controller => 'meetings', :action => 'create', :method => 'post'), remote: true do |f| %> 
+            <div class="name">
+              <%= f.label "Event Name:" %>
+              <%= f.input :name, :label => false   %>
+            </div>
+            <div class="label1">
+              <%= f.label "Start Time:" %>
+            </div>
+            <div class="start">
+              <%= f.time_select :start_time, {:ampm => true} %> 
+            </div>     
+            <div class="label2">
+              <%= f.label "End Time:" %>
+            </div>
+            <div class="end">
+              <%= f.time_select :end_time, {ampm: true}  %>
+            </div>  
+              <%= f.button :submit, id: "#{n}" %>
+                <div class="empty">
+                </div>
+              <% n += 1 %>
+              <% end %>
+        <% end %>
+     <% end %>
+</div>   
+
+
+

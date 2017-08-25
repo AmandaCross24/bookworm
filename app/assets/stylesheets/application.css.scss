@@ -10,48 +10,127 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require simple_calendar
+
  *= require_tree .
  *= require_self
 
 
  */
-
+@import url('https://fonts.googleapis.com/css?family=Bellefair|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+@import url('https://fonts.googleapis.com/css?family=Anton');
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 
- body {
- 	background-color: #6600CC; 	
+
+@font-face {
+  font-family: 'Bad Script';
+  src: url('fonts.googleapis.com/css?family=Bad+Script');  
+} 
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('https://fonts.googleapis.com/css?family=Raleway');
+}
+
+body {
+	font-family: 'Bad Script';
+	background-color: #a6b1c1;
+
+
+
 }
 
 
+.simple-calendar {
+width: 100px;
+margin: 40px;
+padding: 20px;
+
+
+
+
+  .day {
+ width: 150px;
+ height: 1000px;
+ margin-left: -20px;
+  
+  }
+
+  .wday-0 {
+
+  }
+  .wday-1 {
+
+
+  }
+  .wday-2 {
+
+  }
+  .wday-3 {
+
+  }
+  .wday-4 {
+
+  }
+  .wday-5 {
+
+
+  }
+  .wday-6 {
+
+
+
+  }
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {
+
+
+
+  }
+
+  .has-events {}
+
+  .calendar {
+ 	font-size: 30px;
+ 	margin-left: 400px;
+ 	width: 400px;
+
+  }
+  .calendar-heading {
+  display: inline;
+  margin-left: 400px;
+  }
+}
+
+
+
+
 p { 
-	font-family: Arial, sans-serif;
+	font-family: 'Bad Script', sans-serif;
 	
 	text-align: left; 
 	margin: 50px auto;
 	}
 
 li {
-	font-family: Arial, sans-serif;
+	font-family: 'Bad Script', sans-serif;
 	
 	text-align: left;
 	margin: 20px auto;
 }
 
-h1 {
-	text-align: center;
-	background-color: #FAF9FC;
-	padding: 10px;
-	color: red;
-	border-radius: 20px;
-	border: 2px solid black;
-    border-width: 1px;
-    padding: 20px;
-    margin: 0px 400px;
-    margin-top: 100px
-   
-}
+
 
 h2 {
 	margin-top: 50px;
@@ -68,15 +147,7 @@ h2 {
      
 }
 
-.header {
-	margin-left: 60px;
-	padding: 10px;
-	
-	font-family: Comic Sans MS, cursive, sans-serif; 
-	font-size: 30px;
-	margin-top: 60px;
-	display: inline;
-}
+
 
 
 
@@ -129,93 +200,15 @@ img {
 	margin-left: 40px;
 }
 
-
-.circle {
-	margin-top: 50px;
-    border-radius: 30px;
-    background-color: #FAF9FC;
-    border: 1px solid lavender;
-    margin-left: 30px;
-    margin-right: 30px;
-    padding: 40px;
-	text-align: center;
-    text-decoration: none;
-    color: red;
-    font-size: 15px;
-   
-   
-}
-
-.rectangle {
-	border-radius: 20px;
-    width: 160px;
-    background-color: #FF6600;
-    border: 2px solid lavender;
-  	padding: 30px;
-  	margin-left: 30px;
-  	margin-right: 30px;
-  	text-align: center;
-    text-decoration: none;
-    color: lavender;
-    display: inline;
+.button {
+	font-size: 20px;
 }
 
 
-.rectangle2 {
-	border-radius: 20px;
-    width: 160px;
-    background-color: deeppink;
-    border: 2px solid lavender;
-  	padding: 30px;
-  	margin-left: 30px;
-  	margin-right: 30px;
-  	text-align: center;
-    text-decoration: none;
-    color: lavender;
-    display: inline;
-}
 
-
-.rectangle3 {
-	border-radius: 20px;
-    width: 160px;
-    background-color: red;
-    border: 2px solid lavender;
-  	padding: 30px;
-  	margin-left: 30px;
-  	margin-right: 30px;
-  	text-align: center;
-    text-decoration: none;
-    color: lavender;
-    display: inline;
-}
-
-.rectangle4 {
-	border-radius: 20px;
-    width: 160px;
-    background-color: #00E600;
-    border: 2px solid lavender;
-  	padding: 30px;
-  	margin-left: 30px;
-  	margin-right: 30px;
-  	text-align: center;
-    text-decoration: none;
-    color: lavender;
-    display: inline;
-}
-
-.rectangle5 {
-	border-radius: 20px;
-    width: 160px;
-    background-color: #FFFF00;
-    border: 2px solid lavender;
-  	padding: 30px;
-  	margin-left: 30px;
-  	margin-right: 30px;
-  	text-align: center;
-    text-decoration: none;
-    color: lavender;
-    display: inline;
+.time-select {
+  width: 50px;
+  display: inline;
 }
 
 
@@ -227,7 +220,7 @@ img {
 }
 
 
-.background_image {
+.background {
 	padding-top: 220px;
 	padding-bottom: 25px;
 	margin-top: 200px;
@@ -354,6 +347,101 @@ list-style-type: none;
 .lighter {
 	background-color: #D6EBFF;
 	opacity: 50%;
-	padding: 100px;
+	margin-left: 50px;
+	margin-right: 50px;
 	border-radius: 100px;
+}
+
+.custom {
+	padding: 10;
+	background-color: purple;
+	color: white;
+	width: 100px;
+	height: 30px;
+}
+
+
+.title {
+	text-align: center;
+	padding: 100px;
+	font-size: 40px;
+}
+
+.form-control {
+
+	padding: 20px;
+	float: left;
+	display: inline;
+	float: left;
+	
+	
+	
+	
+}
+
+.name {
+	width: 150px;
+}
+
+
+
+
+
+.start {
+	clear: left;
+}
+
+
+.meetings {
+	margin-left: 50px;
+	font-family: 'Bad Script';
+	padding: 100px;
+	background-color: #ff3385;
+}
+
+
+td {
+	font-family: 'Raleway';
+	font-size: 18px;
+	padding: 20px;
+}
+
+th {
+	
+	font-family: 'Bad Script';
+	font-size: 20px;
+	padding: 20px;
+}
+h1 {
+	border: none;
+
+}
+
+.schedule {
+	margin-top: 100px;
+	margin-left: 300px;
+
+}
+
+td {
+	width: 50%;
+	zoom: 0.8;
+}
+
+.table table-striped {
+	width: 100px;
+	background-color: pink;
+}
+
+tr {
+	margin-left: 300px;
+
+}
+
+.button {
+	font-weight: bold;
+}
+
+.panel-body {
+	background-color:  blue;
 }

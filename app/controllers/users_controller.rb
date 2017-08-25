@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+layout 'users'
 
   def index
     @users = User.all
@@ -11,15 +11,20 @@ class UsersController < ApplicationController
 end
 
   def create
-  @user = User.new(user_params)
-    if @user.save 
-      flash[:notice] = "Your account was created successfully.  Please log in."
-      redirect_to user_path(@user)
-    else
-      flash[:alert] = "There was a problem creating your account."
-      redirect_to new_user_path
+  @user = User.create(user_params)
 
-  end
+if
+   @user = User.new(user_params)
+   @user.save!
+
+      flash[:notice] = "Your account was created successfully.  You have been logged in."
+    
+       redirect_to user_path(@user)
+      # flash[:alert] = "There was a problem creating your account."
+    else 
+    
+      flash[:alert] = "Please enter the required information in the fields."
+end
   end
 
 
@@ -43,11 +48,15 @@ end
 end
 
   def show
-@user = User.find(params[:id])
-  end
+    @user = User.find_by(params[:current_user])
+   
+   
+
+end
 
   def account
-  @user = User.find(params[:id])
+  @user = current_user
+
 end
 
   def destroy
@@ -66,14 +75,13 @@ end
      private
 
 
-  def current_user
-    @user = User.find(params[:id])
-  end
+  # def current_user
+  #   @user = User.find(params[:id])
+  # end
+
 
 
   def user_params
-    params.require(:user).permit(:fname, :lname, :parent, :username, :email, :password, :avatar, :students_first_name, :students_last_name, :teacher_name)
-  end
+   params.require(:user).permit(:fname, :lname, :username, :email, :password, :parent, :students_first_name, :students_last_name, :teacher_name)
+     end
 end
-
-# end

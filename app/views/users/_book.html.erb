@@ -1,0 +1,33 @@
+
+
+<!-- Button trigger modal -->
+<button type="button" class="rectangle5" data-toggle="modal" data-target="#myModal3">
+  Add a Book
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add A Book</h4>
+      </div>
+      <div class="modal-body">
+        
+        <div class="sign_up">
+          <%= simple_form_for Book.new, :url => url_for(:controller => 'books', :action => 'create')do |f| %> 
+           <%= f.input :title %>
+           <%= f.input :author %>
+           <%= f.input :lexile_level  %>
+           <%= f.input :guided_reading_level %>   
+           <%= f.button :submit, class: "circle" %>
+           <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

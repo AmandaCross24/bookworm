@@ -11,6 +11,7 @@
     
  
   <%= link_to "Home", root_path, class: "circle" %>
+
   
   </div>    
 </div>
@@ -21,29 +22,28 @@
 		<tr class="active">
   		   <td><%= "Student's Name"  %></td>
 
+         <td><%= "Classroom Number" %></td>
   			
   		   <td><%= "Current Lexile Level" %></td>
 
   		   <td><%=  "Current Guided Reading Level" %></td>
+         <td><%= " " %></td>
   		</tr>
 
 
 		<% @student.each do |student| %>
 		<tr class="active">
-	       <%= link_to(@student) do %>
-        <strong><%= @student.fname %></strong> -- <span>Check it out!</span>
-        <% end %>
-
-       <strong>David</strong> -- <span>Check it out!</span>
-     </a>
+	
   		   
-         <td><%= link_to "#{student.fname + " " + student.lname}", profile_path(@student.id), class: "name" %></td>
+         <td><%= link_to "#{student.fname + " " + student.lname}", profile_path(student.id), class: "name" %></td>
   	     
-         <td><%= student.id %>
+         <td><%= student.id %></td>
   			
   		   <td><%= student.current_lexile_level %></td>
 
   		   <td><%= student.current_guided_reading_level %></td>
+
+         <td><%= link_to 'Delete This Student', destroy_student_path(student.id), method: :delete %></td>
   		</tr>
   		<% end %> 
 </div>  

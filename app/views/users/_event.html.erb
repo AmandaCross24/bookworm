@@ -1,0 +1,6 @@
+<div id="meetings_grid" >
+  <% @meetings = Meeting.all %>
+  <% @meetings.each do |meeting| %>
+  <%= link_to meeting.name, meetings_path, remote: true %>
+  <% end %>
+</div>

@@ -1,3 +1,70 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Bellefair|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+body {
+	background-color: #61d863;
+}
+
+.header {
+	margin-left: 60px;
+	padding: 10px;
+	margin-right: 300px;
+	margin-left: 300px; 
+	font-size: 30px;
+	margin-top: 60px;
+	display: inline;
+}
+
+h1 {
+	font-family: 'Anton';	
+	text-align: center;
+	background-color: #FAF9FC;
+	color:#ed1b09;
+	border-radius: 20px;
+	border: 2px solid #f9ecec;
+    border-width: 1px;
+    padding: 20px;
+    margin: 0px 400px;
+    margin-top: 100px;
+    font-size: 50px;
+    margin-right: 500px;
+    margin-left: 500px;
+    background-color: #f9ecec;
+  
+   
+}
+
+.circle {
+	font-family: 'Bellefair';
+	margin-top: 50px;
+    border-radius: 30px;
+    background-color: #FAF9FC;
+    border: 1px solid lavender;
+    margin-left: 10px;
+    padding: 20px;
+	text-align: center;
+    text-decoration: none;
+    color: #1c511d;
+    font-size: 20px;
+
+   
+   
+}
+
+.background {
+	background-color: pink;
+
+}
+
+.buttons {
+	margin-top: -100px;
+}

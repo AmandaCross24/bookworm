@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -20,6 +20,13 @@ gem 'cocoon', '~> 1.2.6'
 
 gem 'simple_form', '~> 3.1.0'
 
+gem "simple_calendar", "~> 2.2"
+
+gem 'truncato'
+
+gem 'haml'
+
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 
 
@@ -48,6 +55,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'rspec-rails', '~> 3.5'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

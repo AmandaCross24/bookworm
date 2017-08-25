@@ -3,8 +3,21 @@
 class User < ActiveRecord::Base
 has_many :students
 has_many :books
+has_many :meetings
 has_one :session
+# accepts_nested_attributes_for :session, allow_destroy: true
 belongs_to :session
+# validates :fname, presence: true
+# validates :lname, presence: true
+# validates :username, presence: true
+
+
+extend SimpleCalendar
+    belongs_to :user
+    has_many :meetings
+
+
+   
 # accepts_nested_attributes_for :session, allow_destroy: true
 
 # accepts_nested_attributes_for :students, :reject_if => :all_blank, :allow_destroy => true
