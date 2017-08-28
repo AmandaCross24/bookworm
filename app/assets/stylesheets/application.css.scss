@@ -12,7 +12,8 @@
  *
  *= require simple_calendar
 
- *= require_tree .
+ *= require welcome.scss
+ *= require users.scss
  *= require_self
 
 
@@ -151,45 +152,6 @@ h2 {
 
 
 
-.main {
-
-	margin-top: 50px;
-	margin-left: 200px;
-	padding: 20px;
-	width: 875px;
-	height: 605px;
-	background-color: purple;
-	border-radius: 10px;
-	border-style: solid;
-    border-width: 1px;
-}
-
-.main2 {
-	clear: both;
-	background-color: white;
-	float: left;
-	height: 550px;
-	border-radius: 50px;
-	background-color: white;
-	max-width: 390px;
-	margin-left: 30px;
-	
-	padding: 50px;
-	border-style: solid;
-    border-width: 1px;
-}
-
-.main3 {
-	background-color: white;
-	float: left;
-	border-style: solid;
-    border-width: 1px;
-	height: 550px;
-	border-radius: 50px;
-	background-color: white;
-	max-width: 390px;
-	padding: 50px;
-}
 
 a {
 	color: grey;
@@ -220,30 +182,6 @@ img {
 }
 
 
-.background {
-	padding-top: 220px;
-	padding-bottom: 25px;
-	margin-top: 200px;
-	background-image: url("kids reading.gif");
-	background-size: cover;
-	background-position: 70% 20%; 
-	background-color: white;
-	margin-bottom: 100px;
-	height: 1000px;
-	border: 5px solid deeppink;
-}
-
-.sign_up {
-	background-color: #9999FF;
-	color: purple;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	padding-right: 20px;
-	padding-left: 20px;
-	text-align: left;
-	margin-right: 30px;
-	
-}
 
 .edit {
 	clear: both;

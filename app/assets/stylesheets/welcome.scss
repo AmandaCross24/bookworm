@@ -28,7 +28,7 @@ body {
 header {
 	background-color: #ff0066;
 	padding: 10px;
-	margin-top: -100px;
+	margin-top: -200px;
 }
 
 h1 {
@@ -74,6 +74,7 @@ h1 {
 
 .buttons {
 	margin-top: -100px;
+	float: right;
 }
 
 .paragraph {
@@ -94,4 +95,58 @@ li {
 
 .buttons {
 	margin-top: 50px;
+	clear: both;
 }
+
+
+.main {
+
+	margin-top: 50px;
+	margin-left: 200px;
+	padding: 20px;
+	width: 875px;
+	height: 605px;
+	background-color: #00664d;
+	border-radius: 10px;
+	border-style: solid;
+    border-width: 1px;
+}
+
+.main2 {
+	clear: both;
+	background-color: white;
+	float: left;
+	height: 550px;
+	border-radius: 50px;
+	background-color: white;
+	max-width: 390px;
+	margin-left: 30px;
+	
+	padding: 50px;
+	border-style: solid;
+    border-width: 1px;
+}
+
+.main3 {
+	background-color: white;
+	float: left;
+	border-style: solid;
+    border-width: 1px;
+	height: 550px;
+	border-radius: 50px;
+	background-color: white;
+	max-width: 390px;
+	padding: 50px;
+}
+
+
+.modal-body {
+	background-color: #9999ff;
+	padding: 50px;
+	margin: 50px;
+}
+
+.modal-content {
+	background-color: #ccffcc;
+}
+
